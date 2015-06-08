@@ -12,12 +12,13 @@ public class CounterImpl extends Counter.Stub{
     public synchronized int increment() throws RemoteException
     {
         Log.d(this.getClass().getName(),"Begin" +  String.valueOf(this.counter));
-        try {
+        //teil g
+        /*try {
             Thread.sleep(20000);
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }
+        }*/
         counter++;
         Log.d(this.getClass().getName(), "END" + String.valueOf(this.counter));
 
