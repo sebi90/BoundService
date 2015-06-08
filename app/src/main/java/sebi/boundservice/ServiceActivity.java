@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.RemoteException;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,9 +35,9 @@ public class ServiceActivity extends Activity {
     }
 
     public void onBindService(View v) {
-
-    Intent newIntent = new Intent(serviceName);
-    serConn = new MyServiceConnection(this);
+        Log.d(this.getClass().getName(), "onBindService");
+        Intent newIntent = new Intent(serviceName);
+        serConn = new MyServiceConnection(this);
         newIntent.setPackage("sebi.boundservice");
         bindService(newIntent, serConn, Context.BIND_AUTO_CREATE);
     }
@@ -52,15 +53,15 @@ public class ServiceActivity extends Activity {
     }
 
 
-    public void increment(View view)
+    public void increment(View view)throws RemoteException
     {
         action(1); }
-    public void reset(View view)
+    public void reset(View view)throws RemoteException
     {
         action(2); }
 
 
-    private void action(int function) {
+    private void action(int function) throws RemoteException{
         TextView tv = (TextView) findViewById(R.id.textView2);
         if (counter != null) {
             int newValue = 0;

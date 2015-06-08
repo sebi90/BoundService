@@ -19,16 +19,16 @@ public class MyBoundService extends Service {
     }
     public void onCreate()
     {
-        Log.d(this.getClass().getName(), "onCreate (" + "...");
+        Log.d(this.getClass().getName(), "onCreate (" + number + ")");
     }
     public IBinder onBind(Intent intent)
     {
-        Log.d(this.getClass().getName(), "onBind (" + "...");
+        Log.d(this.getClass().getName(), "onBind (" + number + ")");
         return new CounterImpl();
     }
     // => gebundener Service
     public void onDestroy()
     {
-        Log.d(this.getClass().getName(), "onDestroy (" + "...");
+        Log.d(this.getClass().getName(), "onDestroy (" + number + ")");
     }
 }

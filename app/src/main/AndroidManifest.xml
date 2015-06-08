@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <service android:name=".MyBoundService"
-            tools:ignore="ExportedService" >
+            android:process=":remote">
             <intent-filter>
                 <action android:name="dma.lecture.localboundservice.LOCALBOUNDSERVICE"  />
                 <category android:name="android.intent.category.DEFAULT" />

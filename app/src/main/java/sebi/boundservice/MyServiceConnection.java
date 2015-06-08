@@ -22,8 +22,9 @@ public class MyServiceConnection implements ServiceConnection{
         Log.d(this.getClass().getName(), "onServiceConnected");
         //CounterImpl c = (CounterImpl)binder;
         Counter c = Counter.Stub.asInterface(binder);
-
+        Log.d(this.getClass().getName(), "Counter " + String.valueOf(c));
         activity.setCounter(c);
+
     }
     public void onServiceDisconnected(ComponentName name)
     {
