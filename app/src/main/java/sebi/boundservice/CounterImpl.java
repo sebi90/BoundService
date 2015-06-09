@@ -11,16 +11,16 @@ public class CounterImpl extends Counter.Stub{
     private int counter;
     public synchronized int increment() throws RemoteException
     {
-        Log.d(this.getClass().getName(),"Begin" +  String.valueOf(this.counter));
+        Log.d(this.getClass().getName(),"Begin " +  String.valueOf(this.counter));
         //teil g
-        /*try {
-            Thread.sleep(20000);
+        try {
+            Thread.sleep(10000);
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }*/
+        }
         counter++;
-        Log.d(this.getClass().getName(), "END" + String.valueOf(this.counter));
+        Log.d(this.getClass().getName(), "END " + String.valueOf(this.counter));
 
         return counter;
     }
